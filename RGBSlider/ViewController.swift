@@ -9,6 +9,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet private var rGBView: UIView!
     
     @IBOutlet private var redSliderValue: UILabel!
@@ -23,6 +24,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         rGBView.layer.cornerRadius = 10
+        rGBViewColorChanged()
     }
     
     private func rGBViewColorChanged() {
