@@ -24,7 +24,18 @@ final class ViewController: UIViewController {
         
         rGBView.layer.cornerRadius = 10
     }
-
+    
+    private func rGBViewColorChanged() {
+        rGBView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
+}
+// MARK: - Setup UI
+extension ViewController {
     @IBAction private func redSliderChangedValue() {
         redSlider.value = round(redSlider.value / 0.01) * 0.01
         redSliderValue.text = redSlider.value.formatted()
@@ -41,15 +52,6 @@ final class ViewController: UIViewController {
         blueSlider.value = round(blueSlider.value / 0.01) * 0.01
         blueSliderValue.text = blueSlider.value.formatted()
         rGBViewColorChanged()
-    }
-    
-    private func rGBViewColorChanged() {
-        rGBView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
     }
 }
 
