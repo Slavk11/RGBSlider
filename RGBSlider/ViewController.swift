@@ -9,11 +9,11 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    @IBOutlet var rGBView: UIView!
+    @IBOutlet private var rGBView: UIView!
     
-    @IBOutlet var redSliderValue: UILabel!
-    @IBOutlet var greenSliderValue: UILabel!
-    @IBOutlet var blueSliderValue: UILabel!
+    @IBOutlet private var redSliderValue: UILabel!
+    @IBOutlet private var greenSliderValue: UILabel!
+    @IBOutlet private var blueSliderValue: UILabel!
     
     @IBOutlet private var redSlider: UISlider!
     @IBOutlet private var greenSlider: UISlider!
@@ -26,23 +26,30 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func redSliderChangedValue() {
-        let roundedValue = round(redSlider.value / 0.01) * 0.01
-        redSlider.value = roundedValue
+        redSlider.value = round(redSlider.value / 0.01) * 0.01
         redSliderValue.text = redSlider.value.formatted()
+        rGBViewColorChanged()
     }
     
     @IBAction private func greenSliderChangedValue() {
-        let roundedValue = round(greenSlider.value / 0.01) * 0.01
-        greenSlider.value = roundedValue
+        greenSlider.value = round(greenSlider.value / 0.01) * 0.01
         greenSliderValue.text = greenSlider.value.formatted()
+        rGBViewColorChanged()
     }
     
-    @IBAction func blueSliderChangedValue() {
-        let roundedValue = round(blueSlider.value / 0.01) * 0.01
-        blueSlider.value = roundedValue
+    @IBAction private func blueSliderChangedValue() {
+        blueSlider.value = round(blueSlider.value / 0.01) * 0.01
         blueSliderValue.text = blueSlider.value.formatted()
+        rGBViewColorChanged()
     }
     
-    
+    private func rGBViewColorChanged() {
+        rGBView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
 }
 
