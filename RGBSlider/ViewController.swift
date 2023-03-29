@@ -23,8 +23,23 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rGBView.layer.cornerRadius = 10
         rGBViewColorChanged()
+        
+        redSliderValue.text = string(from: redSlider)
+        greenSliderValue.text = string(from: greenSlider)
+        blueSliderValue.text = string(from: blueSlider)
+        
+    }
+
+    @IBAction private func sliderAction(_ sender: UISlider) {
+        rGBViewColorChanged()
+        switch sender {
+        case redSlider:
+            redSliderValue.text = string(from: redSlider)
+        case greenSlider:
+            greenSliderValue.text = string(from: greenSlider)
+        default: blueSliderValue.text = string(from: blueSlider)
+        }
     }
     
     private func rGBViewColorChanged() {
@@ -35,25 +50,11 @@ final class ViewController: UIViewController {
             alpha: 1
         )
     }
-}
-// MARK: - Setup UI
-extension ViewController {
-    @IBAction private func redSliderChangedValue() {
-        redSlider.value = round(redSlider.value / 0.01) * 0.01
-        redSliderValue.text = redSlider.value.formatted()
-        rGBViewColorChanged()
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
     
-    @IBAction private func greenSliderChangedValue() {
-        greenSlider.value = round(greenSlider.value / 0.01) * 0.01
-        greenSliderValue.text = greenSlider.value.formatted()
-        rGBViewColorChanged()
-    }
-    
-    @IBAction private func blueSliderChangedValue() {
-        blueSlider.value = round(blueSlider.value / 0.01) * 0.01
-        blueSliderValue.text = blueSlider.value.formatted()
-        rGBViewColorChanged()
-    }
 }
+
 
