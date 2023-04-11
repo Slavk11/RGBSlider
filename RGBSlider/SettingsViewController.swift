@@ -7,9 +7,8 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
-    // MARK: - IB Outlets
     @IBOutlet private var rGBView: UIView!
     
     @IBOutlet private var redSliderValue: UILabel!

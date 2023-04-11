@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		796EA94329E5C0F2003E6057 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796EA94229E5C0F2003E6057 /* MainViewController.swift */; };
 		7974215A29CE27E300158487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974215929CE27E300158487 /* AppDelegate.swift */; };
 		7974215C29CE27E300158487 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974215B29CE27E300158487 /* SceneDelegate.swift */; };
 		7974215E29CE27E300158487 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974215D29CE27E300158487 /* SettingsViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		796EA94229E5C0F2003E6057 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7974215629CE27E300158487 /* RGBSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7974215929CE27E300158487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7974215B29CE27E300158487 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				7974215929CE27E300158487 /* AppDelegate.swift */,
 				7974215B29CE27E300158487 /* SceneDelegate.swift */,
+				796EA94229E5C0F2003E6057 /* MainViewController.swift */,
 				7974215D29CE27E300158487 /* SettingsViewController.swift */,
 				7974215F29CE27E300158487 /* Main.storyboard */,
 				7974216229CE27E400158487 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				7974215E29CE27E300158487 /* SettingsViewController.swift in Sources */,
 				7974215A29CE27E300158487 /* AppDelegate.swift in Sources */,
 				7974215C29CE27E300158487 /* SceneDelegate.swift in Sources */,
+				796EA94329E5C0F2003E6057 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
