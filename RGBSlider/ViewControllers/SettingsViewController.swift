@@ -58,7 +58,6 @@ final class SettingsViewController: UIViewController {
     @IBAction func doneButtonPressed() {
         view.endEditing(true)
         delegate.setValue(for: backgroundColor)
-        rGBViewColorChanged()
         dismiss(animated: true)
     }
     
