@@ -19,10 +19,20 @@ final class SettingsViewController: UIViewController {
     @IBOutlet private var greenSlider: UISlider!
     @IBOutlet private var blueSlider: UISlider!
     
+    var backgroundColor: BackgroundColor!
+    unowned var delegate: SettingsViewControllerDelegate!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rGBViewColorChanged()
+        
+        redSlider.value = Float(backgroundColor.red)
+        greenSlider.value = Float(backgroundColor.green)
+        blueSlider.value = Float(backgroundColor.blue)
+
+        navigationItem.hidesBackButton = true
         
         redSliderValue.text = string(from: redSlider)
         greenSliderValue.text = string(from: greenSlider)
@@ -35,17 +45,28 @@ final class SettingsViewController: UIViewController {
         switch sender {
         case redSlider:
             redSliderValue.text = string(from: redSlider)
+            backgroundColor.red = Double(redSlider.value)
         case greenSlider:
             greenSliderValue.text = string(from: greenSlider)
+            backgroundColor.green = Double(greenSlider.value)
         default: blueSliderValue.text = string(from: blueSlider)
+            backgroundColor.blue = Double(blueSlider.value)
         }
+    }
+   
+    
+    @IBAction func doneButtonPressed() {
+        view.endEditing(true)
+        delegate.setValue(for: backgroundColor)
+        rGBViewColorChanged()
+        dismiss(animated: true)
     }
     
     private func rGBViewColorChanged() {
         rGBView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: CGFloat(backgroundColor.red),
+            green: CGFloat(backgroundColor.green),
+            blue: CGFloat(backgroundColor.blue),
             alpha: 1
         )
     }
