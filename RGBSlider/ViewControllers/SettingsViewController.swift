@@ -31,7 +31,7 @@ final class SettingsViewController: UIViewController {
         redSlider.value = Float(backgroundColor.red)
         greenSlider.value = Float(backgroundColor.green)
         blueSlider.value = Float(backgroundColor.blue)
-
+        
         navigationItem.hidesBackButton = true
         
         redSliderValue.text = string(from: redSlider)
@@ -39,7 +39,7 @@ final class SettingsViewController: UIViewController {
         blueSliderValue.text = string(from: blueSlider)
         
     }
-
+    
     @IBAction private func sliderAction(_ sender: UISlider) {
         rGBViewColorChanged()
         switch sender {
@@ -53,7 +53,7 @@ final class SettingsViewController: UIViewController {
             backgroundColor.blue = Double(blueSlider.value)
         }
     }
-   
+    
     
     @IBAction func doneButtonPressed() {
         view.endEditing(true)

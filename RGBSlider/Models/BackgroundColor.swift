@@ -13,10 +13,10 @@ struct BackgroundColor {
     var blue: Double
     
     static func getDefaultColors() -> BackgroundColor {
-       BackgroundColor(
-        red: 0,
-        green: 0,
-        blue: 0
+        BackgroundColor(
+            red: 0,
+            green: 0,
+            blue: 0
         )
     }
 }

@@ -30,14 +30,14 @@ final class MainViewController: UIViewController {
         guard let settingsVC = navigationVC.topViewController as? SettingsViewController else { return }
         settingsVC.backgroundColor = backgroundColor
         settingsVC.delegate = self
-       
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
 }
 
 extension MainViewController: SettingsViewControllerDelegate {
