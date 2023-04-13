@@ -28,6 +28,8 @@ final class SettingsViewController: UIViewController {
         
         rGBViewColorChanged()
         
+        rGBView.layer.cornerRadius = 15
+        
         redSlider.value = Float(backgroundColor.red)
         greenSlider.value = Float(backgroundColor.green)
         blueSlider.value = Float(backgroundColor.blue)
