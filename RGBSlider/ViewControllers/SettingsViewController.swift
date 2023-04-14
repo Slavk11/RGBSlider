@@ -72,10 +72,6 @@ final class SettingsViewController: UIViewController {
         delegate.setColor(rGBView.backgroundColor ?? .white)
         dismiss(animated: true)
     }
-   
-    
-    
-    
 }
 
 //MARK: - Private Methods
@@ -125,7 +121,13 @@ extension SettingsViewController {
     }
     
     private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
-        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = "1.0"
+            textField?.becomeFirstResponder()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
